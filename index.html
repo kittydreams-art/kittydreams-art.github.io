@@ -1,0 +1,174 @@
+我看到你貼上的代碼**確實有問題**。HTML 被截斷了，而且 CSS 選擇器邏輯有缺陷。我會給你一個**完全修復的完整版本**。
+
+---
+
+## ✅ 完整修復版本（可直接使用）
+
+複製下面的**整個代碼**：
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣自來水公司 - AI協助綠能成果 記者問答(Q&A) 應變系統</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); min-height: 100vh; padding: 20px; color: #333; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); overflow: hidden; }
+        
+        header { background: #ffbe00; color: #cc0000; padding: 25px; text-align: center; font-weight: bold; border-bottom: 4px solid #e6a100; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; letter-spacing: 2px; }
+        header p { font-size: 1.1em; opacity: 0.9; color: #111; font-weight: 600; }
+        
+        .content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 25px; padding: 25px; }
+        @media (max-width: 900px) { .content { grid-template-columns: 1fr; } }
+        
+        /* 左側提問席 */
+        .press-section { background: #f8f9fa; padding: 25px; border-radius: 10px; border-left: 4px solid #cc0000; }
+        .press-section h2 { color: #cc0000; margin-bottom: 20px; font-size: 1.4em; }
+        
+        .q-card-label { display: block; background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #e0e0e0; cursor: pointer; transition: 0.3s; position: relative; padding-left: 35px; }
+        .q-card-label:hover { border-color: #cc0000; transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .q-card-label::before { content: "❓"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 1.2em; }
+        
+        .media-badge { display: inline-block; padding: 3px 8px; background: #4b5563; color: white; border-radius: 4px; font-size: 0.8em; margin-bottom: 8px; font-weight: bold; }
+        .media-tv { background: #dc2626; }
+        .media-paper { background: #2563eb; }
+        .media-net { background: #059669; }
+        .media-judge { background: #7c3aed; }
+        .q-text { font-weight: bold; color: #2d3748; line-height: 1.4; font-size: 0.95em; }
+        
+        /* 隱藏原生單選鈕 */
+        input[type="radio"] { display: none; }
+        
+        /* 右側回答區 */
+        .answer-section { background: #f0fdf4; padding: 25px; border-radius: 10px; border: 2px solid #22c55e; display: flex; flex-direction: column; position: relative; min-height: 520px; }
+        .answer-section h2 { color: #15803d; margin-bottom: 15px; }
+        
+        .placeholder-box { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 40px; text-align: center; color: #718096; background: rgba(255,255,255,0.5); border: 2px dashed #cbd5e0; border-radius: 8px; }
+        .placeholder-box span { font-size: 3em; margin-bottom: 10px; }
+        
+        .answer-content { display: none; }
+        .answer-content.active { display: block; animation: fadeIn 0.5s ease; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .status-badge { display: inline-block; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; font-size: 1em; color: white; background: #22c55e; }
+        .box { background: white; padding: 18px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #11998e; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .box h3 { margin-bottom: 8px; color: #11998e; font-size: 1.1em; }
+        .box p { line-height: 1.6; color: #2d3748; font-size: 0.98em; text-align: justify; }
+        
+        .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .kpi-item { background: #f0fdf4; padding: 10px; border-radius: 6px; text-align: center; border: 1px solid #bbf7d0; }
+        .kpi-val { font-size: 1.3em; font-weight: bold; color: #166534; }
+        .kpi-lbl { font-size: 0.8em; color: #666; }
+        
+        .btn-reset { display: block; margin-top: 15px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; text-align: center; transition: 0.3s; width: 100%; }
+        .btn-reset:hover { background: #0369a1; }
+        
+        .q-card-label.active { border-color: #cc0000; background: #fff5f5; border-left: 4px solid #cc0000; }
+        .q-card-label.active-judge { border-color: #7c3aed; background: #fdfaff; border-left: 4px solid #7c3aed; }
+        
+        footer { background: #f8f9fa; padding: 15px; text-align: center; color: #666; font-size: 0.9em; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI協助綠能成果展示</h1>
+            <p>第 3 核心工作項目：媒體與評審記者問答 (Q&A) 應變模擬系統</p>
+        </header>
+        
+        <div class="content">
+            <!-- 左側提問席 -->
+            <div class="press-section">
+                <h2>🎤 記者會現場提問（請點選題目測試）</h2>
+                
+                <div class="q-card-label" data-answer="ans1">
+                    <div class="media-badge media-tv">電視台記者</div>
+                    <div class="q-text">淨水場用 AI 調度綠電，跟一般傳統的太陽能發電系統有什麼本質上的不同？台水到底有什麼優勢？</div>
+                </div>
+                
+                <div class="q-card-label" data-answer="ans2">
+                    <div class="media-badge media-paper">財經日報記者</div>
+                    <div class="q-text">綠能最大的痛點就是不穩定（看天吃飯），台水如何保證在日照不足或乾旱流速減緩時，淨水廠不會因此斷水或增加購電成本？</div>
+                </div>
+                
+                <div class="q-card-label" data-answer="ans3">
+                    <div class="media-badge media-net">環保焦點新媒體</div>
+                    <div class="q-text">推動小水力發電，會不會影響民眾的飲用水水質？或者會不會造成供水管網的壓力下降而引發民怨？</div>
+                </div>
+                
+                <div class="q-card-label" data-answer="ans4">
+                    <div class="media-badge media-judge">工作坊評審/長官</div>
+                    <div class="q-text">這個 AI 綠能成果展示系統，對台水高層長官在落實國家 2050 淨零碳排與經濟部考核 KPI 上，能帶來什麼實質數據貢獻？</div>
+                </div>
+                
+                <button class="btn-reset">🔄 重置記者會（隱藏回答）</button>
+            </div>
+            
+            <!-- 右側回答區 -->
+            <div class="answer-section">
+                <h2>🎙️ 台水官方發言人 AI 智慧答詢</h2>
+                
+                <!-- 預設等待畫面 -->
+                <div class="placeholder-box" id="placeholder">
+                    <span>🎙️</span>
+                    <p><b>等待媒體提問...</b><br>請點擊左側任何一個記者或長官的提問字框，AI 發言人系統將立刻自動檢索台水綠能知識庫並輸出官方完美擬答。</p>
+                </div>
+                
+                <!-- 應答1 -->
+                <div class="answer-content" id="ans1">
+                    <div class="status-badge">📢 官方精準答詢已生成</div>
+                    <div class="box">
+                        <h3>🎯 核心回應方針 (Core Strategy)</h3>
+                        <p>傳統系統只是『被動發電』並將綠電打包回售給台電，台水自己還是得買高價的尖峰電力。而我們導入的 AI 系統具有『智慧電網調度』能力，能直接將綠電與場內高耗能馬達進行微電網對接，落實『綠電優先自用』，直接幫台水扣抵龐大電費，把被動發電升級為主動資產管理！</p>
+                    </div>
+                    <div class="box">
+                        <h3>💡 科技與規章實據說明 (Technical Justification)</h3>
+                        <p>AI 每秒動態監測頂山淨水場高耗能抽水馬達的運轉負載（當前負載45%），並根據即時日照強度自動計算最優化的綠電自用比例（目前達85%）。這不僅是發電，幕後更是透過 AI 算法將供水製程與綠能產出進行數位鎔鑄，屬於經濟部極力推動的智慧能源標竿示範案場。</p>
+                    </div>
+                    <div class="box" style="border-left-color: #ffbe00;">
+                        <h3>📊 預計達成的即時績效數據 (Real-time Impact)</h3>
+                        <div class="kpi-grid">
+                            <div class="kpi-item"><div class="kpi-val">85%</div><div class="kpi-lbl">智慧調度率</div></div>
+                            <div class="kpi-item"><div class="kpi-val">22%</div><div class="kpi-lbl">降低尖峰購電成本</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 應答2 -->
+                <div class="answer-content" id="ans2">
+                    <div class="status-badge">📢 官方精準答詢已生成</div>
+                    <div class="box">
+                        <h3>🎯 核心回應方針 (Core Strategy)</h3>
+                        <p>請長官與媒體放心，台水的大天條是『供水穩定第一』。AI 平台絕不會因為綠能波動而影響供水安全。當日照下降或流速不足時，AI 大腦會在 0.1 秒內自動切換為『混合供電模式』，主動調度離峰時段預存的儲能電池電力來補足缺口，確保淨水設備 100% 穩定運作。</p>
+                    </div>
+                    <div class="box">
+                        <h3>💡 科技與規章實據說明 (Technical Justification)</h3>
+                        <p>系統內建『氣象預報與產能預測模型』，能提前 6 小時預知陰天或豪雨引發的原水濁度變化。AI 會提早在離峰低電價時段將蓄電池充飽，並在綠能不足時釋放。透過這種智慧調度，我們不僅做到了供水零風險，更成功避開了向台電購買最昂貴的尖峰電力，完美兼顧安全與財政韌性。</p>
+                    </div>
+                    <div class="box" style="border-left-color: #ffbe00;">
+                        <h3>📊 預計達成的即時績效數據 (Real-time Impact)</h3>
+                        <div class="kpi-grid">
+                            <div class="kpi-item"><div class="kpi-val">100%</div><div class="kpi-lbl">供水穩定率</div></div>
+                            <div class="kpi-item"><div class="kpi-val">6hrs</div><div class="kpi-lbl">預測預警時間</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 應答3 -->
+                <div class="answer-content" id="ans3">
+                    <div class="status-badge">📢 官方精準答詢已生成</div>
+                    <div class="box">
+                        <h3>🎯 核心回應方針 (Core Strategy)</h3>
+                        <p>小水力發電利用的是既有導水管道內的『位能差』來驅動發電機，完全不涉及攔阻原水或改變水質處理流程。所有原水依舊經過完整的膠凝、沉澱、過濾、消毒等淨化步驟，發電機組只是『沿途吸取能量』，就像在河道裡放置一個輪子讓水流推動，最後原水該流向淨水池還是流向淨水池，供水安全零影響。</p>
+                    </div>
+                    <div class="box">
+                        <h3>💡 科技與規章實據說明 (Technical Justification)</h3>
+                        <p>根據經濟部水利署與環保署的聯合指導，小水力發電在『不改變既有供水邏輯』的前提下獲得許可。我們的系統通過了環評與自來水用水許可審查，並配置了自動監測裝置
