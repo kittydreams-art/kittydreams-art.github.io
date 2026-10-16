@@ -3,163 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台灣自來水公司-AI-068期潘華興 - 深夜施工安全與智慧交維 AI 視覺防護系統</title>
+    <title>Kittydreams Art | 個人作品集</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: linear-gradient(135deg, #111 0%, #2c3e50 100%); min-height: 100vh; padding: 20px; color: #fff; }
-        .container { max-width: 1300px; margin: 0 auto; background: #1e272e; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #3d3d3d; }
-        header { background: #ffa801; color: #111; padding: 25px; text-align: center; font-weight: bold; border-bottom: 4px solid #d28100; }
-        header h1 { font-size: 2.2em; margin-bottom: 5px; }
-        header p { font-size: 1.1em; opacity: 0.9; letter-spacing: 1px; }
-        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; padding: 25px; }
-        @media (max-width: 900px) { .content { grid-template-columns: 1fr; } }
-        .form-section { background: #2f3640; padding: 25px; border-radius: 10px; border-left: 4px solid #ffa801; }
-        .form-section h2 { color: #ffa801; margin-bottom: 20px; font-size: 1.4em; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 6px; font-weight: 600; color: #dcdde1; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #485460; border-radius: 6px; font-size: 1em; background: #1e272e; color: #fff; }
-        input:focus, select:focus { border-color: #ffa801; outline: none; }
-        .btn-group { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin-top: 15px; }
-        button { padding: 14px; background: #ffa801; color: #111; border: none; border-radius: 6px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: 0.3s; }
-        button:hover { background: #eccc68; transform: translateY(-2px); }
-        .reset-btn { background: #4b5563; color: white; }
-        .reset-btn:hover { background: #9ca3af; transform: translateY(-2px); }
-        .result-section { background: #1e272e; padding: 25px; border-radius: 10px; border: 2px solid #ff3f34; display: none; }
-        .result-section h2 { color: #ff3f34; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .alert-status { display: inline-block; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 20px; font-size: 1.2em; text-align: center; width: 100%; }
-        .alert-critical { background: #ff3f34; color: white; animation: blink 1s infinite; }
-        .alert-normal { background: #2ed573; color: white; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
-        .box { background: #2f3640; padding: 18px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #ff1e1e; }
-        .box h3 { margin-bottom: 10px; color: #ffca28; font-size: 1.1em; }
-        .box ul { list-style: none; padding-left: 5px; }
-        .box li { padding: 6px 0; line-height: 1.6; border-bottom: 1px solid #3d3d3d; }
-        .box li:last-child { border-bottom: none; }
-        footer { background: #111; padding: 15px; text-align: center; color: #a4b0be; font-size: 0.9em; border-top: 1px solid #3d3d3d; }
+        /* 這裡就是 CSS：用來控制網頁的顏色與外觀 */
+        body {
+            background-color: #1e1e24; /* 網頁背景改成深灰色 */
+            color: #ffffff;           /* 文字顏色改成白色 */
+            font-family: "Microsoft JhengHei", sans-serif; /* 微軟正黑體 */
+            text-align: center;       /* 讓所有文字置中 */
+            padding: 50px 20px;
+        }
+        .profile-img {
+            width: 150px;             /* 限制圖片寬度 150 像素 */
+            height: 150px;
+            border-radius: 50%;       /* 把圖片變成完美的圓形 */
+            border: 3px solid #ff6b6b; /* 給圖片加上粉紅色的邊框 */
+            object-fit: cover;
+        }
+        h1 {
+            color: #ff6b6b;           /* 讓大標題變成漂亮的粉紅色 */
+            margin-top: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #cccccc;           /* 副標題用稍微淡一點的灰色 */
+        }
+        .btn {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            text-decoration: none;    /* 拔除超連結的下底線 */
+            padding: 10px 20px;
+            border-radius: 25px;      /* 讓按鈕邊角圓潤 */
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;         /* 讓滑鼠移過去的特效平滑 */
+        }
+        .btn:hover {
+            background-color: #ff4757; /* 滑鼠移上去時按鈕變深色 */
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🚧 台水深夜施工安全與智慧交維防護系統</h1>
-<p style="font-size: 1.8rem; color: #2e7d32; font-weight: bold;">AI工作坊-068期◆◆◆潘華興◆◆◆</p>
-            <p>台水 ESG 承諾：落實零工安意外 • 守護第一線深夜修搶修同仁</p>
-        </header>
-        <div class="content">
-            <!-- 左側輸入 -->
-            <div class="form-section">
-                <h2>📷 現場即時影像 AI 數據輸入</h2>
-                <form id="safetyForm">
-                    <div class="form-group">
-                        <label>搶修施工地點</label>
-                        <input type="text" id="location" value="新營區民治路段深夜汰換管線工地" required>
-                    </div>
-                    <div class="form-group">
-                        <label>AI 偵測：拒馬與交通錐擺放完整度 (%)</label>
-                        <input type="number" id="cones" value="65" min="0" max="100" required>
-                    </div>
-                    <div class="form-group">
-                        <label>AI 偵測：現場施工人員未戴安全帽/反光背心人數</label>
-                        <input type="number" id="noHelmet" value="1" min="0" max="10" required>
-                    </div>
-                    <div class="form-group">
-                        <label>AI 偵測：後方來車接近速度 (km/h)</label>
-                        <input type="number" id="speed" value="78" min="0" max="150" required>
-                    </div>
-                    <div class="form-group">
-                        <label>AI 偵測：重型車輛 (砂石車/聯結車) 接近狀態</label>
-                        <select id="truck">
-                            <option value="yes" selected>偵測到重型大卡車快速逼近中</option>
-                            <option value="no">僅有一般小客車</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>現場防護裝備連線狀態</label>
-                        <select id="iot">
-                            <option value="connected" selected>智慧氣笛喇叭與爆閃燈已連線</option>
-                            <option value="disconnected">未連線</option>
-                        </select>
-                    </div>
-                    <div class="btn-group">
-                        <button type="submit">🚨 啟動 AI 影像即時巡檢</button>
-                        <button type="button" class="reset-btn" id="clearBtn">🔄 清除重設</button>
-                    </div>
-                </form>
-            </div>
-            <!-- 右側輸出 -->
-            <div class="result-section" id="resultSection">
-                <h2>⚡ AI 即時安全防護告警結果</h2>
-                <div id="statusBadge"></div>
-                <div class="box" style="border-left-color: #ff3f34;">
-                    <h3>🚨 違規與危險因子分析 (AI Vision Analysis)</h3>
-                    <ul id="analysisList"></ul>
-                </div>
-                <div class="box" style="border-left-color: #ffa801;">
-                    <h3>🔊 系統即時自動化防禦機制 (IoT Action)</h3>
-                    <p id="actionText"></p>
-                </div>
-                <div class="box" style="border-left-color: #2ed573;">
-                    <h3>📊 高層 ESG 與工安合規管理指標</h3>
-                    <p id="esgText"></p>
-                </div>
-            </div>
-        </div>
-        <footer><p>台灣自來水公司 AI 工作坊成果發表 | 同仁安全第一 • 科技落實 ESG</p></footer>
-    </div>
-    <script>
-        const safetyForm = document.getElementById('safetyForm');
-        const resultSection = document.getElementById('resultSection');
-        const clearBtn = document.getElementById('clearBtn');
-        
-        // 執行評估邏輯
-        safetyForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const location = document.getElementById('location').value;
-            const cones = parseInt(document.getElementById('cones').value);
-            const noHelmet = parseInt(document.getElementById('noHelmet').value);
-            const speed = parseInt(document.getElementById('speed').value);
-            const truck = document.getElementById('truck').value;
-            
-            const statusBadge = document.getElementById('statusBadge');
-            const analysisList = document.getElementById('analysisList');
-            const actionText = document.getElementById('actionText');
-            const esgText = document.getElementById('esgText');
-            
-            analysisList.innerHTML = "";
-            
-            if (cones < 80 || noHelmet > 0 || (speed > 60 && truck === "yes")) {
-                statusBadge.innerHTML = `<div class="alert-status alert-critical">🚨 DANGER：工安危險高風險告警 🚨</div>`;
-                resultSection.style.borderColor = "#ff3f34";
-                
-                if (cones < 80) {
-                    analysisList.innerHTML += `<li>⚠️ <b>交維漏洞</b>：交通錐與拒馬配置完整度僅 ${cones}%（未達法規 80%），緩衝防護距離嚴重不足。</li>`;
-                }
-                if (noHelmet > 0) {
-                    analysisList.innerHTML += `<li>⚠️ <b>人員違規</b>：AI 辨識工區有 ${noHelmet} 名同仁未正確穿戴防護裝備（安全帽/反光背心）。</li>`;
-                }
-                if (speed > 60 && truck === "yes") {
-                    analysisList.innerHTML += `<li>🚨 <b>突發死角威脅</b>：工區後方偵測到重型砂石車以時速 ${speed} km/h 超速逼近，預計 7 秒內抵達。</li>`;
-                }
-                
-                actionText.innerHTML = `🔥 <b>智慧氣笛已觸發！</b> 系統已發射無線訊號，立刻啟動現場「高分貝防撞氣笛喇叭」與「工區LED爆閃燈」，語音廣播命令施工同仁跳入安全防護區避難！同時自動截圖通報區處工安課經辦。`;
-                esgText.innerHTML = `本案件已自動上傳台水 ESG 工安雲端資料庫。系統自動防護成功避免一起重大工安意外。今日累計預防潛在職災災損：<b>1 件</b>。同仁平安。`;
-                
-            } else {
-                statusBadge.innerHTML = `<div class="alert-status alert-normal">✅ SAFE：工安合規正常運作中</div>`;
-                resultSection.style.borderColor = "#2ed573";
-                analysisList.innerHTML = `<li>• 現場交通錐擺放合規。</li><li>• 全員正確穿戴個人防護裝備。</li><li>• 後方車速與車流無異常。</li>`;
-                actionText.innerHTML = `系統維持常態背景動態監控，智慧氣笛待命。`;
-                esgText.innerHTML = `工區完全符合台水職安規範與 ESG 安全職場指標。`;
-            }
-            
-            resultSection.style.display = "block";
-        });
 
-        // 新增的清除表單與隱藏結果邏輯
-        clearBtn.addEventListener('click', function() {
-            safetyForm.reset(); // 重設表單所有欄位為預設值
-            resultSection.style.display = "none"; // 隱藏右側的 AI 評估結果結果
-        });
-    </script>
+    <!-- 1. 圖片標籤：這裡直接讀取剛才上傳的 Hello Kitty 圖片 -->
+    <img src="kitty1151016-1.jpg" alt="Hello Kitty 頭像" class="profile-img">
+
+    <!-- 2. 文字內容 -->
+    <h1>潘華興的Kittydreams Art</h1>
+    <p>歡迎來到我的個人藝術與程式設計空間！</p>
+    <p>這是我的第一個透過 GitHub Pages 建立的免費網站。</p>
+
+    <!-- 3. 超連結按鈕：點擊後直接在同分頁切換至台水深夜施工安全系統 -->
+    <a href="water.html" class="btn">瀏覽我的 GitHub首發作品</a>
+
 </body>
 </html>
