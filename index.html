@@ -3,163 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>台灣自來水公司 - AI協助綠能成果 記者問答(Q&A) 應變系統</title>
+    <title>台灣自來水公司-AI-068期潘華興 - 深夜施工安全與智慧交維 AI 視覺防護系統</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); min-height: 100vh; padding: 20px; color: #333; }
-        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); overflow: hidden; }
-        
-        header { background: #ffbe00; color: #cc0000; padding: 25px; text-align: center; font-weight: bold; border-bottom: 4px solid #e6a100; }
-        header h1 { font-size: 2.2em; margin-bottom: 5px; letter-spacing: 2px; }
-        header p { font-size: 1.1em; opacity: 0.9; color: #111; font-weight: 600; }
-        
-        .content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 25px; padding: 25px; }
+        body { font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif; background: linear-gradient(135deg, #111 0%, #2c3e50 100%); min-height: 100vh; padding: 20px; color: #fff; }
+        .container { max-width: 1300px; margin: 0 auto; background: #1e272e; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; border: 1px solid #3d3d3d; }
+        header { background: #ffa801; color: #111; padding: 25px; text-align: center; font-weight: bold; border-bottom: 4px solid #d28100; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; }
+        header p { font-size: 1.1em; opacity: 0.9; letter-spacing: 1px; }
+        .content { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; padding: 25px; }
         @media (max-width: 900px) { .content { grid-template-columns: 1fr; } }
-        
-        /* 左側提問席 */
-        .press-section { background: #f8f9fa; padding: 25px; border-radius: 10px; border-left: 4px solid #cc0000; }
-        .press-section h2 { color: #cc0000; margin-bottom: 20px; font-size: 1.4em; }
-        
-        .q-card-label { display: block; background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 2px solid #e0e0e0; cursor: pointer; transition: 0.3s; position: relative; padding-left: 35px; }
-        .q-card-label:hover { border-color: #cc0000; transform: translateX(5px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .q-card-label::before { content: "❓"; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 1.2em; }
-        
-        .media-badge { display: inline-block; padding: 3px 8px; background: #4b5563; color: white; border-radius: 4px; font-size: 0.8em; margin-bottom: 8px; font-weight: bold; }
-        .media-tv { background: #dc2626; }
-        .media-paper { background: #2563eb; }
-        .media-net { background: #059669; }
-        .media-judge { background: #7c3aed; }
-        .q-text { font-weight: bold; color: #2d3748; line-height: 1.4; font-size: 0.95em; }
-        
-        /* 隱藏原生單選鈕 */
-        input[type="radio"] { display: none; }
-        
-        /* 右側回答區 */
-        .answer-section { background: #f0fdf4; padding: 25px; border-radius: 10px; border: 2px solid #22c55e; display: flex; flex-direction: column; position: relative; min-height: 520px; }
-        .answer-section h2 { color: #15803d; margin-bottom: 15px; }
-        
-        .placeholder-box { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 40px; text-align: center; color: #718096; background: rgba(255,255,255,0.5); border: 2px dashed #cbd5e0; border-radius: 8px; }
-        .placeholder-box span { font-size: 3em; margin-bottom: 10px; }
-        
-        .answer-content { display: none; }
-        .answer-content.active { display: block; animation: fadeIn 0.5s ease; }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .status-badge { display: inline-block; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; font-size: 1em; color: white; background: #22c55e; }
-        .box { background: white; padding: 18px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #11998e; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .box h3 { margin-bottom: 8px; color: #11998e; font-size: 1.1em; }
-        .box p { line-height: 1.6; color: #2d3748; font-size: 0.98em; text-align: justify; }
-        
-        .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .kpi-item { background: #f0fdf4; padding: 10px; border-radius: 6px; text-align: center; border: 1px solid #bbf7d0; }
-        .kpi-val { font-size: 1.3em; font-weight: bold; color: #166534; }
-        .kpi-lbl { font-size: 0.8em; color: #666; }
-        
-        .btn-reset { display: block; margin-top: 15px; padding: 12px; background: #0284c7; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; text-align: center; transition: 0.3s; width: 100%; }
-        .btn-reset:hover { background: #0369a1; }
-        
-        .q-card-label.active { border-color: #cc0000; background: #fff5f5; border-left: 4px solid #cc0000; }
-        .q-card-label.active-judge { border-color: #7c3aed; background: #fdfaff; border-left: 4px solid #7c3aed; }
-        
-        footer { background: #f8f9fa; padding: 15px; text-align: center; color: #666; font-size: 0.9em; border-top: 1px solid #eee; }
+        .form-section { background: #2f3640; padding: 25px; border-radius: 10px; border-left: 4px solid #ffa801; }
+        .form-section h2 { color: #ffa801; margin-bottom: 20px; font-size: 1.4em; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; color: #dcdde1; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #485460; border-radius: 6px; font-size: 1em; background: #1e272e; color: #fff; }
+        input:focus, select:focus { border-color: #ffa801; outline: none; }
+        .btn-group { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; margin-top: 15px; }
+        button { padding: 14px; background: #ffa801; color: #111; border: none; border-radius: 6px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #eccc68; transform: translateY(-2px); }
+        .reset-btn { background: #4b5563; color: white; }
+        .reset-btn:hover { background: #9ca3af; transform: translateY(-2px); }
+        .result-section { background: #1e272e; padding: 25px; border-radius: 10px; border: 2px solid #ff3f34; display: none; }
+        .result-section h2 { color: #ff3f34; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .alert-status { display: inline-block; padding: 10px 20px; border-radius: 20px; font-weight: bold; margin-bottom: 20px; font-size: 1.2em; text-align: center; width: 100%; }
+        .alert-critical { background: #ff3f34; color: white; animation: blink 1s infinite; }
+        .alert-normal { background: #2ed573; color: white; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+        .box { background: #2f3640; padding: 18px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #ff1e1e; }
+        .box h3 { margin-bottom: 10px; color: #ffca28; font-size: 1.1em; }
+        .box ul { list-style: none; padding-left: 5px; }
+        .box li { padding: 6px 0; line-height: 1.6; border-bottom: 1px solid #3d3d3d; }
+        .box li:last-child { border-bottom: none; }
+        footer { background: #111; padding: 15px; text-align: center; color: #a4b0be; font-size: 0.9em; border-top: 1px solid #3d3d3d; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>AI協助綠能成果展示</h1>
-            <p>第 3 核心工作項目：媒體與評審記者問答 (Q&A) 應變模擬系統</p>
+            <h1>🚧 台水深夜施工安全與智慧交維防護系統</h1>
+ <p>AI工作坊-068期◆潘華興◆</p>
+            <p>台水 ESG 承諾：落實零工安意外 • 守護第一線深夜修搶修同仁</p>
         </header>
-        
         <div class="content">
-            <!-- 左側提問席 -->
-            <div class="press-section">
-                <h2>🎤 記者會現場提問（請點選題目測試）</h2>
-                
-                <div class="q-card-label" data-answer="ans1">
-                    <div class="media-badge media-tv">電視台記者</div>
-                    <div class="q-text">淨水場用 AI 調度綠電，跟一般傳統的太陽能發電系統有什麼本質上的不同？台水到底有什麼優勢？</div>
-                </div>
-                
-                <div class="q-card-label" data-answer="ans2">
-                    <div class="media-badge media-paper">財經日報記者</div>
-                    <div class="q-text">綠能最大的痛點就是不穩定（看天吃飯），台水如何保證在日照不足或乾旱流速減緩時，淨水廠不會因此斷水或增加購電成本？</div>
-                </div>
-                
-                <div class="q-card-label" data-answer="ans3">
-                    <div class="media-badge media-net">環保焦點新媒體</div>
-                    <div class="q-text">推動小水力發電，會不會影響民眾的飲用水水質？或者會不會造成供水管網的壓力下降而引發民怨？</div>
-                </div>
-                
-                <div class="q-card-label" data-answer="ans4">
-                    <div class="media-badge media-judge">工作坊評審/長官</div>
-                    <div class="q-text">這個 AI 綠能成果展示系統，對台水高層長官在落實國家 2050 淨零碳排與經濟部考核 KPI 上，能帶來什麼實質數據貢獻？</div>
-                </div>
-                
-                <button class="btn-reset">🔄 重置記者會（隱藏回答）</button>
+            <!-- 左側輸入 -->
+            <div class="form-section">
+                <h2>📷 現場即時影像 AI 數據輸入</h2>
+                <form id="safetyForm">
+                    <div class="form-group">
+                        <label>搶修施工地點</label>
+                        <input type="text" id="location" value="新營區民治路段深夜汰換管線工地" required>
+                    </div>
+                    <div class="form-group">
+                        <label>AI 偵測：拒馬與交通錐擺放完整度 (%)</label>
+                        <input type="number" id="cones" value="65" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label>AI 偵測：現場施工人員未戴安全帽/反光背心人數</label>
+                        <input type="number" id="noHelmet" value="1" min="0" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label>AI 偵測：後方來車接近速度 (km/h)</label>
+                        <input type="number" id="speed" value="78" min="0" max="150" required>
+                    </div>
+                    <div class="form-group">
+                        <label>AI 偵測：重型車輛 (砂石車/聯結車) 接近狀態</label>
+                        <select id="truck">
+                            <option value="yes" selected>偵測到重型大卡車快速逼近中</option>
+                            <option value="no">僅有一般小客車</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>現場防護裝備連線狀態</label>
+                        <select id="iot">
+                            <option value="connected" selected>智慧氣笛喇叭與爆閃燈已連線</option>
+                            <option value="disconnected">未連線</option>
+                        </select>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit">🚨 啟動 AI 影像即時巡檢</button>
+                        <button type="button" class="reset-btn" id="clearBtn">🔄 清除重設</button>
+                    </div>
+                </form>
             </div>
+            <!-- 右側輸出 -->
+            <div class="result-section" id="resultSection">
+                <h2>⚡ AI 即時安全防護告警結果</h2>
+                <div id="statusBadge"></div>
+                <div class="box" style="border-left-color: #ff3f34;">
+                    <h3>🚨 違規與危險因子分析 (AI Vision Analysis)</h3>
+                    <ul id="analysisList"></ul>
+                </div>
+                <div class="box" style="border-left-color: #ffa801;">
+                    <h3>🔊 系統即時自動化防禦機制 (IoT Action)</h3>
+                    <p id="actionText"></p>
+                </div>
+                <div class="box" style="border-left-color: #2ed573;">
+                    <h3>📊 高層 ESG 與工安合規管理指標</h3>
+                    <p id="esgText"></p>
+                </div>
+            </div>
+        </div>
+        <footer><p>台灣自來水公司 AI 工作坊成果發表 | 同仁安全第一 • 科技落實 ESG</p></footer>
+    </div>
+    <script>
+        const safetyForm = document.getElementById('safetyForm');
+        const resultSection = document.getElementById('resultSection');
+        const clearBtn = document.getElementById('clearBtn');
+        
+        // 執行評估邏輯
+        safetyForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const location = document.getElementById('location').value;
+            const cones = parseInt(document.getElementById('cones').value);
+            const noHelmet = parseInt(document.getElementById('noHelmet').value);
+            const speed = parseInt(document.getElementById('speed').value);
+            const truck = document.getElementById('truck').value;
             
-            <!-- 右側回答區 -->
-            <div class="answer-section">
-                <h2>🎙️ 台水官方發言人 AI 智慧答詢</h2>
+            const statusBadge = document.getElementById('statusBadge');
+            const analysisList = document.getElementById('analysisList');
+            const actionText = document.getElementById('actionText');
+            const esgText = document.getElementById('esgText');
+            
+            analysisList.innerHTML = "";
+            
+            if (cones < 80 || noHelmet > 0 || (speed > 60 && truck === "yes")) {
+                statusBadge.innerHTML = `<div class="alert-status alert-critical">🚨 DANGER：工安危險高風險告警 🚨</div>`;
+                resultSection.style.borderColor = "#ff3f34";
                 
-                <!-- 預設等待畫面 -->
-                <div class="placeholder-box" id="placeholder">
-                    <span>🎙️</span>
-                    <p><b>等待媒體提問...</b><br>請點擊左側任何一個記者或長官的提問字框，AI 發言人系統將立刻自動檢索台水綠能知識庫並輸出官方完美擬答。</p>
-                </div>
+                if (cones < 80) {
+                    analysisList.innerHTML += `<li>⚠️ <b>交維漏洞</b>：交通錐與拒馬配置完整度僅 ${cones}%（未達法規 80%），緩衝防護距離嚴重不足。</li>`;
+                }
+                if (noHelmet > 0) {
+                    analysisList.innerHTML += `<li>⚠️ <b>人員違規</b>：AI 辨識工區有 ${noHelmet} 名同仁未正確穿戴防護裝備（安全帽/反光背心）。</li>`;
+                }
+                if (speed > 60 && truck === "yes") {
+                    analysisList.innerHTML += `<li>🚨 <b>突發死角威脅</b>：工區後方偵測到重型砂石車以時速 ${speed} km/h 超速逼近，預計 7 秒內抵達。</li>`;
+                }
                 
-                <!-- 應答1 -->
-                <div class="answer-content" id="ans1">
-                    <div class="status-badge">📢 官方精準答詢已生成</div>
-                    <div class="box">
-                        <h3>🎯 核心回應方針 (Core Strategy)</h3>
-                        <p>傳統系統只是『被動發電』並將綠電打包回售給台電，台水自己還是得買高價的尖峰電力。而我們導入的 AI 系統具有『智慧電網調度』能力，能直接將綠電與場內高耗能馬達進行微電網對接，落實『綠電優先自用』，直接幫台水扣抵龐大電費，把被動發電升級為主動資產管理！</p>
-                    </div>
-                    <div class="box">
-                        <h3>💡 科技與規章實據說明 (Technical Justification)</h3>
-                        <p>AI 每秒動態監測頂山淨水場高耗能抽水馬達的運轉負載（當前負載45%），並根據即時日照強度自動計算最優化的綠電自用比例（目前達85%）。這不僅是發電，幕後更是透過 AI 算法將供水製程與綠能產出進行數位鎔鑄，屬於經濟部極力推動的智慧能源標竿示範案場。</p>
-                    </div>
-                    <div class="box" style="border-left-color: #ffbe00;">
-                        <h3>📊 預計達成的即時績效數據 (Real-time Impact)</h3>
-                        <div class="kpi-grid">
-                            <div class="kpi-item"><div class="kpi-val">85%</div><div class="kpi-lbl">智慧調度率</div></div>
-                            <div class="kpi-item"><div class="kpi-val">22%</div><div class="kpi-lbl">降低尖峰購電成本</div></div>
-                        </div>
-                    </div>
-                </div>
+                actionText.innerHTML = `🔥 <b>智慧氣笛已觸發！</b> 系統已發射無線訊號，立刻啟動現場「高分貝防撞氣笛喇叭」與「工區LED爆閃燈」，語音廣播命令施工同仁跳入安全防護區避難！同時自動截圖通報區處工安課經辦。`;
+                esgText.innerHTML = `本案件已自動上傳台水 ESG 工安雲端資料庫。系統自動防護成功避免一起重大工安意外。今日累計預防潛在職災災損：<b>1 件</b>。同仁平安。`;
+                
+            } else {
+                statusBadge.innerHTML = `<div class="alert-status alert-normal">✅ SAFE：工安合規正常運作中</div>`;
+                resultSection.style.borderColor = "#2ed573";
+                analysisList.innerHTML = `<li>• 現場交通錐擺放合規。</li><li>• 全員正確穿戴個人防護裝備。</li><li>• 後方車速與車流無異常。</li>`;
+                actionText.innerHTML = `系統維持常態背景動態監控，智慧氣笛待命。`;
+                esgText.innerHTML = `工區完全符合台水職安規範與 ESG 安全職場指標。`;
+            }
+            
+            resultSection.style.display = "block";
+        });
 
-                <!-- 應答2 -->
-                <div class="answer-content" id="ans2">
-                    <div class="status-badge">📢 官方精準答詢已生成</div>
-                    <div class="box">
-                        <h3>🎯 核心回應方針 (Core Strategy)</h3>
-                        <p>請長官與媒體放心，台水的大天條是『供水穩定第一』。AI 平台絕不會因為綠能波動而影響供水安全。當日照下降或流速不足時，AI 大腦會在 0.1 秒內自動切換為『混合供電模式』，主動調度離峰時段預存的儲能電池電力來補足缺口，確保淨水設備 100% 穩定運作。</p>
-                    </div>
-                    <div class="box">
-                        <h3>💡 科技與規章實據說明 (Technical Justification)</h3>
-                        <p>系統內建『氣象預報與產能預測模型』，能提前 6 小時預知陰天或豪雨引發的原水濁度變化。AI 會提早在離峰低電價時段將蓄電池充飽，並在綠能不足時釋放。透過這種智慧調度，我們不僅做到了供水零風險，更成功避開了向台電購買最昂貴的尖峰電力，完美兼顧安全與財政韌性。</p>
-                    </div>
-                    <div class="box" style="border-left-color: #ffbe00;">
-                        <h3>📊 預計達成的即時績效數據 (Real-time Impact)</h3>
-                        <div class="kpi-grid">
-                            <div class="kpi-item"><div class="kpi-val">100%</div><div class="kpi-lbl">供水穩定率</div></div>
-                            <div class="kpi-item"><div class="kpi-val">6hrs</div><div class="kpi-lbl">預測預警時間</div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 應答3 -->
-                <div class="answer-content" id="ans3">
-                    <div class="status-badge">📢 官方精準答詢已生成</div>
-                    <div class="box">
-                        <h3>🎯 核心回應方針 (Core Strategy)</h3>
-                        <p>小水力發電利用的是既有導水管道內的『位能差』來驅動發電機，完全不涉及攔阻原水或改變水質處理流程。所有原水依舊經過完整的膠凝、沉澱、過濾、消毒等淨化步驟，發電機組只是『沿途吸取能量』，就像在河道裡放置一個輪子讓水流推動，最後原水該流向淨水池還是流向淨水池，供水安全零影響。</p>
-                    </div>
-                    <div class="box">
-                        <h3>💡 科技與規章實據說明 (Technical Justification)</h3>
-                        <p>根據經濟部水利署與環保署的聯合指導，小水力發電在『不改變既有供水邏輯』的前提下獲得許可。我們的系統通過了環評與自來水用水許可審查，並配置了自動監測裝置
+        // 新增的清除表單與隱藏結果邏輯
+        clearBtn.addEventListener('click', function() {
+            safetyForm.reset(); // 重設表單所有欄位為預設值
+            resultSection.style.display = "none"; // 隱藏右側的 AI 評估結果結果
+        });
+    </script>
+</body>
+</html>
